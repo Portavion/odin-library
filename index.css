@@ -1,0 +1,15 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    align-items: center;
+    color: white;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+#library-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}

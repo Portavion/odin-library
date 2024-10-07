@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <button id="newBook">NEW BOOK</button>
+
+    <div id="start">List of Books below:
+    </div>
+    <div id="library-container"></div>
+    <dialog autofocus>
+        <button autofocus id="closeDialog">Close</button>
+        <form action="">
+            <div>Title</div><input type="text" name="Title" id="bookTitle">
+            <div>Author</div><input type="text" name="Author" id="bookAuthor">
+            <div>Pages</div><input type="text" name="Pages" id="bookPages">
+            <div>Read?</div>
+
+            <input type="radio" name="Read" id="bookRead" value="1">
+            <label for="bookRead">Yes</label>
+            <input type="radio" name="Read" id="bookRead" value="0">
+            <label for="notRead">No</label>
+            <input type="submit" id="submit-button">
+
+        </form>
+    </dialog>
+    <script src="object-constructor.js"></script>
+</body>
+</html>
