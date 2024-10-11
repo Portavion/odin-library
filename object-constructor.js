@@ -74,37 +74,71 @@ function submitForm(event){
     
 }
 
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-
-    this.info = function() {
-        let readString = '';
-        if(read === 0){
-            readString = 'not read yet';
-        }
-        else if(read === 1){
-            readString = 'already read';
-        }
-        return (title + ' by ' + author + ', ' + pages + ' pages, ' + 
-            readString + '.'
-        );
+class Book {
+    constructor (title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     };
 
-    this.toggleRead = function(event) {
-        cardContainer = event.target.parentNode;
-        readingStatus = cardContainer.querySelector('.readingStatus').textContent;
+    info () {
+        let readString = '';
+
+        if(this.read === 0){
+            readString = 'not read yet';
+        }
+        else if(this.read === 1){
+            readString = 'already read';
+        }
+        return (this.title + ' by ' + this.author + ', ' + this.pages + ' pages, ' + 
+            readString + '.'
+        );
+    }
+
+    toggleRead (event) {
+        const cardContainer = event.target.parentNode;
+        const readingStatus = cardContainer.querySelector('.readingStatus').textContent;
+        
         if (readingStatus === 'Read'){
             cardContainer.querySelector('.readingStatus').innerText = 'Not Read';
         }
         else if (readingStatus === 'Not Read'){
             cardContainer.querySelector('.readingStatus').innerText = 'Read';
         }
-    };
+    }
 }
 
+// function Book(title, author, pages, read){
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+
+//     this.info = function() {
+//         let readString = '';
+//         if(read === 0){
+//             readString = 'not read yet';
+//         }
+//         else if(read === 1){
+//             readString = 'already read';
+//         }
+//         return (title + ' by ' + author + ', ' + pages + ' pages, ' + 
+//             readString + '.'
+//         );
+//     };
+
+//     this.toggleRead = function(event) {
+//         cardContainer = event.target.parentNode;
+//         readingStatus = cardContainer.querySelector('.readingStatus').textContent;
+//         if (readingStatus === 'Read'){
+//             cardContainer.querySelector('.readingStatus').innerText = 'Not Read';
+//         }
+//         else if (readingStatus === 'Not Read'){
+//             cardContainer.querySelector('.readingStatus').innerText = 'Read';
+//         }
+//     };
+// }
 
 function removeCard(event) {
     event.target.parentNode.remove();
